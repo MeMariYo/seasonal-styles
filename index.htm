@@ -57,10 +57,10 @@
 <body>
 	<header role="banner">
 	    <img src="images/four-seasons.gif" alt="Seasonal Logo Goes Here" class="flexible" id="logo" />
-		<h1 class="masthead">Eddie Browser</h1>
+		<h1 class="masthead">Marlaurent</h1>
 		<nav>
 			<ul>
-				<li class="seasons"><a href="Default">Default</a></li>
+				<li class="seasons"><a href="Home">Home</a></li>
 				<li class="seasons"><a href="Spring">Spring</a></li>
 				<li class="seasons"><a href="Summer">Summer</a></li>
 				<li class="seasons"><a href="Fall">Fall</a></li>
@@ -71,17 +71,17 @@
     <main role="main">
 		 <header><h3>Outfitter for All Seasons!</h3></header>
 		 <p>
-		 The colors of the seasonal images are as follows:
-		 <ul>
-			<li>Spring: <b>#2B7129</b></li>
-			<li>Summer: <b>#EBA52B</b></li>
-			<li>Fall: <b>#A81124</b></li>
-			<li>Winter: <b>#005393</b></li>
-		 </ul>
+			Using jQuery, I created a page that promotes a unique look and feel for each of the four seasons by changing a page in the 4 following areas:
+		 <ol>
+			<li>A unique color scheme, for example stylesheet or background color</li>
+			<li>A unique logo, for example a picture of a snowflake for winter</li>
+			<li>A unique item of clothing, for example a parka for winter</li>
+			<li>A unique string of text identifying the season, for example "Leap into our Fall Wear!"</li>
+		 </ol>
 		 </p>
 		 <p>
 		 Aesthetic gentrify YOLO McSweeney's typewriter single-origin coffee. Slow-carb hella listicle lomo, Helvetica single-origin coffee butcher stumptown. Chambray try-hard church-key mumblecore, tote bag PBR cardigan. Retro Austin Brooklyn, blog Intelligentsia gentrify jean shorts sartorial bicycle rights gastropub. Aesthetic wayfarers Pitchfork, tattooed Carles quinoa meh leggings distillery pork belly banjo. Umami cred lumbersexual skateboard, pork belly Tumblr vegan letterpress. Fixie bicycle rights butcher chillwave, gluten-free health goth Echo Park locavore whatever.
-		 <img src="images/300x400.png" alt="Season Wear Goes Here" id="wear" />
+		 <img src="images/home.jpg" alt="Season Wear Goes Here" id="wear" />
 		 </p>
 		<p>
 		Gluten-free selfies normcore chillwave. Listicle 90's chambray, seitan cold-pressed try-hard Etsy authentic flexitarian vinyl. Meditation bespoke freegan, single-origin coffee cred seitan 90's gentrify brunch Williamsburg squid cold-pressed. Brooklyn readymade Tumblr wayfarers ethical. Biodiesel VHS Godard High Life, tousled Banksy craft beer. Mlkshk direct trade locavore, mumblecore keytar artisan hashtag fap. Cred cronut Brooklyn, locavore art party small batch PBR semiotics ennui kitsch taxidermy mlkshk stumptown.
@@ -106,7 +106,61 @@
 		$('.seasons a').click(function(e){//find all a tags inside class of seasons
             e.preventDefault();//stop default submission
 			var season = $(this).attr("href");//contents of href attribute of this element
-			alert(season);
+			//alert(season);  
+
+            season = season.toLowerCase();
+			
+			switch(season){
+
+               case 'spring':
+                    $('main header h3').html('Jump into Spring Wear!');
+					$('#logo').attr('src','images/spring.gif');
+					$('#wear').attr('src','images/spring-wear.jpg');
+					$('html').css('background-color','#2B7129');
+                break;   
+
+				case 'summer':
+                    $('main header h3').html('Jump into Summer Wear!');
+					$('#logo').attr('src','images/summer.gif');
+					$('#wear').attr('src','images/summer-wear.jpg');
+					$('html').css('background-color','#EBA52B');
+                break;    
+
+				case 'fall':
+                    $('main header h3').html('Jump into Fall Wear!');
+					$('#logo').attr('src','images/fall.gif');
+					$('#wear').attr('src','images/fall-wear.jpg');
+					$('html').css('background-color','#A81124');
+                break;    
+
+				case 'winter':
+                    $('main header h3').html('Jump into Winter Wear!');
+					$('#logo').attr('src','images/winter.gif');
+					$('#wear').attr('src','images/winter-wear.jpg');
+					$('html').css('background-color','#005393');
+                break;    
+
+				case 'home':
+                    $('main header h3').html('Jump into our new fashion!');
+					$('#wear').attr('src','images/home.jpg');
+					$('html').css('background-color','gray');
+                break;  
+
+				
+
+			
+			
+			}
+
+
+
+
+
+
+
+
+
+
 		});
 	});
     </script>
